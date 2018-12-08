@@ -11,8 +11,13 @@ public class EventController : MonoBehaviour {
         Festival
     };
 
+    public Sprite[] planetSprites;
+
     public GameObject rocketPrefab;
-    public EventType eventType;
+    public GameObject revoltBubblePrefab;
+
+    [SerializeField]
+    EventType eventType;
 
     [SerializeField]
     int delayFrames;
@@ -25,6 +30,8 @@ public class EventController : MonoBehaviour {
     // Use this for initialization
 	void Start ()
     {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.sprite = planetSprites[Random.Range(0, planetSprites.Length)];
         StartRevolution();
     }
 	
@@ -67,6 +74,9 @@ public class EventController : MonoBehaviour {
     {
         eventType = EventType.Revolution;
         GetComponent<ParticleSystem>().enableEmission = true;
+        GameObject bubble = Instantiate(revoltBubblePrefab);
+        bubble.transform.parent = transform;
+        bubble.transform.localPosition = new Vector3(0, 0, 0);
     }
 
     void StopEvents()

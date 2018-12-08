@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class TextBubbleController : MonoBehaviour {
 
+    public Sprite[] bubbleSprites;
+
     Animation anim;
 
 	// Use this for initialization
 	void Start ()
     {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.sprite = bubbleSprites[Random.Range(0, bubbleSprites.Length)];
         anim = GetComponent<Animation>();
 	}
 	
@@ -18,9 +22,6 @@ public class TextBubbleController : MonoBehaviour {
 		if(!anim.isPlaying)
         {
             Destroy(gameObject);
-            {
-                ;
-            }
         }
 	}
 }
