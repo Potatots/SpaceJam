@@ -113,6 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1001 &322727593
 Prefab:
   m_ObjectHideFlags: 0
@@ -283,6 +284,8 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
   m_IsPrefabAsset: 0
+=======
+>>>>>>> parent of 1d1653c... mergeFix
 --- !u!1 &1287572270
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +363,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1001 &1759932298
+=======
+--- !u!1001 &1914746559
+>>>>>>> parent of 1d1653c... mergeFix
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -369,6 +376,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: 20.01
       objectReference: {fileID: 0}
     - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
@@ -477,11 +485,17 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
       propertyPath: m_LocalPosition.x
+=======
+>>>>>>> parent of 1d1653c... mergeFix
       value: -1.5696188
       objectReference: {fileID: 0}
     - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 2.4
+=======
+      value: 0.5350973
+>>>>>>> parent of 1d1653c... mergeFix
       objectReference: {fileID: 0}
     - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
       propertyPath: m_LocalPosition.z
@@ -505,6 +519,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
@@ -513,6 +528,10 @@ Prefab:
       value: 
       objectReference: {fileID: 1130211544091938, guid: 68dcdf9080f361c45ac403d2a4c03395,
         type: 2}
+=======
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> parent of 1d1653c... mergeFix
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
   m_IsPrefabAsset: 0
