@@ -25,8 +25,7 @@ public class EventController : MonoBehaviour {
     // Use this for initialization
 	void Start ()
     {
-        eventType = EventType.None;
-        GetComponent<ParticleSystem>().enableEmission = false;
+        StartRevolution();
     }
 	
 	// Update is called once per frame
@@ -49,10 +48,31 @@ public class EventController : MonoBehaviour {
             float ran = Random.Range(0f, 1f);
             if (ran < revolutionProbability)
             {
-                eventType = EventType.Revolution;
-                GetComponent<ParticleSystem>().enableEmission = true;
+                StartRevolution();
             }
         }
+    }
+
+
+ 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if(collision.otherCollider.CompareTag("Rocket"))
+        {
+            StopEvents();
+        }
+    }
+
+    void StartRevolution()
+    {
+        eventType = EventType.Revolution;
+        GetComponent<ParticleSystem>().enableEmission = true;
+    }
+
+    void StopEvents()
+    {
+        eventType = EventType.None;
+        GetComponent<ParticleSystem>().enableEmission = false;
     }
 
 
