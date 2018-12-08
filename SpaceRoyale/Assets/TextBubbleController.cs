@@ -18,6 +18,9 @@ public class TextBubbleController : MonoBehaviour {
 		if(!anim.isPlaying)
         {
             Destroy(gameObject);
+            {
+                ;
+            }
         }
 	}
 }
