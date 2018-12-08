@@ -17,8 +17,11 @@ public class ActionController : MonoBehaviour
     public eAction CurrentAction { get; set; }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public eAction NextAction { get; set; }
 
+=======
+>>>>>>> parent of d583a21... ActionController
     public Transform Rocket;
     public Transform Radar;
 
@@ -28,9 +31,7 @@ public class ActionController : MonoBehaviour
 
     void Start()
     {
-        Random rnd = new Random();
-        CurrentAction = (eAction)Random.Range(1, 3);
-        NextAction = (eAction)Random.Range(1, 3);
+        CurrentAction = eAction.Shoot;
         _rigidbody = GetComponent<Rigidbody2D>();
         Speed = 10;
 =======
@@ -57,9 +58,6 @@ public class ActionController : MonoBehaviour
         {
 <<<<<<< HEAD
             Instantiate(Rocket, transform.position, Radar.rotation);
-
-            CurrentAction = NextAction;
-            NextAction = (eAction)Random.Range(1, 3);
         }
         else if(CurrentAction == eAction.StartMove)
         {
@@ -69,15 +67,12 @@ public class ActionController : MonoBehaviour
         else if(CurrentAction == eAction.StopMove)
         {
             StopMove();
-            
-            CurrentAction = NextAction;
-            NextAction = (eAction)Random.Range(1, 3);
+            CurrentAction = eAction.StartMove;
         }
         else if(CurrentAction == eAction.Empty)
         {
             Debug.Log("Coś kurwa poszło nie tak, eAction.Empty");
         }
-        Debug.Log("Aktualna akcja: " + System.Enum.GetName(typeof(eAction), CurrentAction) + "Nastepna akcja: " + System.Enum.GetName(typeof(eAction), NextAction));
     }
 
     public void StartMove(Quaternion qtMove)
