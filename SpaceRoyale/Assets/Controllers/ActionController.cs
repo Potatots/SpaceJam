@@ -38,7 +38,7 @@ public class ActionController : MonoBehaviour
     {
         if(CurrentAction == eAction.Shoot)
         {
-            Instantiate(Rocket, transform.right, Radar.rotation);
+            Instantiate(Rocket, transform.position, Radar.rotation);
         }
         else if(CurrentAction == eAction.StartMove)
         {
