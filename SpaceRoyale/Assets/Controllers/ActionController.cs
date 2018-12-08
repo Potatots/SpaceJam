@@ -12,6 +12,8 @@ public class ActionController : MonoBehaviour
 {
     public eAction CurrentAction { get; set; }
 
+    public eAction NextAction { get; set; }
+
     public Transform Rocket;
     public Transform Radar;
 
@@ -21,7 +23,9 @@ public class ActionController : MonoBehaviour
 
     void Start()
     {
-        CurrentAction = eAction.Shoot;
+        Random rnd = new Random();
+        CurrentAction = (eAction)Random.Range(1, 3);
+        NextAction = (eAction)Random.Range(1, 3);
         _rigidbody = GetComponent<Rigidbody2D>();
         Speed = 10;
     }
@@ -39,6 +43,9 @@ public class ActionController : MonoBehaviour
         if(CurrentAction == eAction.Shoot)
         {
             Instantiate(Rocket, transform.position, Radar.rotation);
+
+            CurrentAction = NextAction;
+            NextAction = (eAction)Random.Range(1, 3);
         }
         else if(CurrentAction == eAction.StartMove)
         {
@@ -48,12 +55,15 @@ public class ActionController : MonoBehaviour
         else if(CurrentAction == eAction.StopMove)
         {
             StopMove();
-            CurrentAction = eAction.StartMove;
+            
+            CurrentAction = NextAction;
+            NextAction = (eAction)Random.Range(1, 3);
         }
         else if(CurrentAction == eAction.Empty)
         {
             Debug.Log("Coś kurwa poszło nie tak, eAction.Empty");
         }
+        Debug.Log("Aktualna akcja: " + System.Enum.GetName(typeof(eAction), CurrentAction) + "Nastepna akcja: " + System.Enum.GetName(typeof(eAction), NextAction));
     }
 
     public void StartMove(Quaternion qtMove)
