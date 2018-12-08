@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player
+{
+    public int Reputation { get; set; }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Rigidbody2D RigidBody { get; set; }
+    public Vector2 MovementVector { get; set; }
+
+    public Player()
+    {
+        RigidBody = new Rigidbody2D();
+        MovementVector = new Vector2();
+    }
 }
