@@ -11,6 +11,7 @@ public class EventController : MonoBehaviour {
         Festival
     };
 
+<<<<<<< HEAD
     public Sprite[] planetSprites;
 
     public GameObject rocketPrefab;
@@ -18,6 +19,10 @@ public class EventController : MonoBehaviour {
 
     [SerializeField]
     EventType eventType;
+=======
+    public GameObject rocketPrefab;
+    public EventType eventType;
+>>>>>>> parent of b52af0b... costam
 
     [SerializeField]
     int delayFrames;
@@ -30,9 +35,14 @@ public class EventController : MonoBehaviour {
     // Use this for initialization
 	void Start ()
     {
+<<<<<<< HEAD
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.sprite = planetSprites[Random.Range(0, planetSprites.Length)];
         StartRevolution();
+=======
+        eventType = EventType.None;
+        GetComponent<ParticleSystem>().enableEmission = false;
+>>>>>>> parent of b52af0b... costam
     }
 	
 	// Update is called once per frame
@@ -55,12 +65,18 @@ public class EventController : MonoBehaviour {
             float ran = Random.Range(0f, 1f);
             if (ran < revolutionProbability)
             {
+<<<<<<< HEAD
                 StartRevolution();
+=======
+                eventType = EventType.Revolution;
+                GetComponent<ParticleSystem>().enableEmission = true;
+>>>>>>> parent of b52af0b... costam
             }
         }
     }
 
 
+<<<<<<< HEAD
  
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -86,4 +102,6 @@ public class EventController : MonoBehaviour {
     }
 
 
+=======
+>>>>>>> parent of b52af0b... costam
 }
