@@ -4,7 +4,8 @@ public enum eAction
 {
     Empty,
     Shoot,
-    Move
+    StartMove,
+    StopMove
 }
 
 public class ActionController : MonoBehaviour
@@ -14,9 +15,15 @@ public class ActionController : MonoBehaviour
     public Transform Rocket;
     public Transform Radar;
 
+    private Rigidbody2D _rigidbody;
+
+    public int Speed;
+
     void Start()
     {
         CurrentAction = eAction.Shoot;
+        _rigidbody = GetComponent<Rigidbody2D>();
+        Speed = 10;
     }
 
     void Update()
@@ -31,15 +38,30 @@ public class ActionController : MonoBehaviour
     {
         if(CurrentAction == eAction.Shoot)
         {
-            Instantiate(Rocket, GetComponent<Transform>().position, Radar.rotation);
+            Instantiate(Rocket, transform.right, Radar.rotation);
         }
-        else if(CurrentAction == eAction.Move)
+        else if(CurrentAction == eAction.StartMove)
         {
-
+            StartMove(Radar.rotation);
+            CurrentAction = eAction.StopMove;
+        }
+        else if(CurrentAction == eAction.StopMove)
+        {
+            StopMove();
+            CurrentAction = eAction.StartMove;
         }
         else if(CurrentAction == eAction.Empty)
         {
-
+            Debug.Log("Coś kurwa poszło nie tak, eAction.Empty");
         }
+    }
+
+    public void StartMove(Quaternion qtMove)
+    {
+        _rigidbody.velocity = Radar.transform.right * Speed;
+    }
+    public void StopMove()
+    {
+        _rigidbody.velocity = Vector3.zero;
     }
 }

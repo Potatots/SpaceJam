@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1736178277347836}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 6, y: 3.34, z: -3.7}
+  m_LocalPosition: {x: 6.5, y: 3.53, z: 0.96}
   m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
   m_Children: []
   m_Father: {fileID: 4607661235710790}
@@ -103,7 +103,7 @@ Transform:
   - {fileID: 4607661235710790}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &4607661235710790
 Transform:
   m_ObjectHideFlags: 1
@@ -139,13 +139,13 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1494143286405400}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: -0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rocket: {fileID: 4799673820471956, guid: 26aa0b80544660d4ca99a20d9d84b573, type: 2}
   Radar: {fileID: 4607661235710790}
+  Speed: 0
 --- !u!212 &212095030271296830
 SpriteRenderer:
   m_ObjectHideFlags: 1
